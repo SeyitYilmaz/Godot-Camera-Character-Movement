@@ -1,3 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704881413
+::res://::1704890011
+gameplay_scene.tscn::PackedScene::8865431284082123672::1704889971::0::1::::<><>::
 icon.svg::CompressedTexture2D::4471023562842452723::1704881409::1704881414::1::::<><>::
+::res://Assets/::1704888980
+::res://Assets/Models/::1704890090
+Kizilelma.glb::PackedScene::1139595797576105321::1704890333::1704890338::1::::<><>::uid://pcthibxbj845::::res://Assets/Models/Bayraktar-body.res
+Bayraktar-body.res::ArrayMesh::1058127956276851956::1704890337::0::1::::<><>::
+bayraktar-engine.res::ArrayMesh::3968590549059270368::1704890090::0::1::::<><>::
