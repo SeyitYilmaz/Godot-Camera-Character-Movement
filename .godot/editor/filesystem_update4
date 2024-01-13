@@ -1,4 +1,1 @@
-res://Assets/Models/Bayraktar-body.res
 res://gameplay_scene.tscn
-res://Prefabs/airplane.tscn
-res://Scripts/AirplaneMovement.gd
