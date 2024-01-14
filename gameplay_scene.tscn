@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6y80qqi6ald1" path="res://Assets/Prefabs/character.tscn" id="3_2qjb5"]
 [ext_resource type="Texture2D" uid="uid://c5jivx00jkr2f" path="res://Assets/Textures/ConcretePrecastPlates004_COL_2K_SPECULAR.png" id="3_3a46k"]
 [ext_resource type="Texture2D" uid="uid://dlvy21fvxkdpm" path="res://Assets/Textures/ConcretePrecastPlates004_AO_2K_SPECULAR.png" id="4_i0a3b"]
-[ext_resource type="Script" path="res://Assets/Prefabs/character.gd" id="4_pnlq3"]
+[ext_resource type="Script" path="res://Assets/Scripts/character.gd" id="4_pnlq3"]
 [ext_resource type="Texture2D" uid="uid://dirse0rpus3lw" path="res://Assets/Textures/ConcretePrecastPlates004_NRM_2K_SPECULAR.png" id="5_pgvcj"]
 [ext_resource type="LabelSettings" uid="uid://bih34a141xvod" path="res://Label Settings/ui_font.tres" id="8_j8wnp"]
 

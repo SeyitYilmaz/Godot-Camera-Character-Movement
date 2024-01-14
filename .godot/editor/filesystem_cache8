@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705248852
-gameplay_scene.tscn::PackedScene::8865431284082123672::1705248854::0::1::::<><>::uid://c5da3lltpjleh::::res://Assets/Prefabs/airplane.tscn<>res://Scripts/Camera.gd<>uid://b6y80qqi6ald1::::res://Assets/Prefabs/character.tscn<>uid://c5jivx00jkr2f::::res://Assets/Textures/ConcretePrecastPlates004_COL_2K_SPECULAR.png<>uid://dlvy21fvxkdpm::::res://Assets/Textures/ConcretePrecastPlates004_AO_2K_SPECULAR.png<>res://Assets/Prefabs/character.gd<>uid://dirse0rpus3lw::::res://Assets/Textures/ConcretePrecastPlates004_NRM_2K_SPECULAR.png<>uid://bih34a141xvod::::res://Label Settings/ui_font.tres
+::res://::1705248869
+gameplay_scene.tscn::PackedScene::8865431284082123672::1705248902::0::1::::<><>::uid://c5da3lltpjleh::::res://Assets/Prefabs/airplane.tscn<>res://Assets/Scripts/Camera.gd<>uid://b6y80qqi6ald1::::res://Assets/Prefabs/character.tscn<>uid://c5jivx00jkr2f::::res://Assets/Textures/ConcretePrecastPlates004_COL_2K_SPECULAR.png<>uid://dlvy21fvxkdpm::::res://Assets/Textures/ConcretePrecastPlates004_AO_2K_SPECULAR.png<>res://Assets/Prefabs/character.gd<>uid://dirse0rpus3lw::::res://Assets/Textures/ConcretePrecastPlates004_NRM_2K_SPECULAR.png<>uid://bih34a141xvod::::res://Label Settings/ui_font.tres
 icon.svg::CompressedTexture2D::4471023562842452723::1704881409::1704881414::1::::<><>::
-::res://Assets/::1705248852
+::res://Assets/::1705248854
 ::res://Assets/Materials/::1705245125
 ::res://Assets/Models/::1704890369
 Kizilelma.glb::PackedScene::1139595797576105321::1704890333::1704890369::1::::<><>::
@@ -11,12 +11,11 @@ Kizilelma.res::ArrayMesh::2432111102474714639::1704890369::0::1::::<><>::
 airplane.tscn::PackedScene::6884750407652074899::1704990479::0::1::::<><>::uid://bawerq11d0rat::::res://Assets/Models/Kizilelma.res
 character.gd::GDScript::-1::1705223972::0::1::::<>CharacterBody3D<>::
 character.tscn::PackedScene::4613869073673850908::1705078871::0::1::::<><>::
-::res://Assets/Scripts/::0
+::res://Assets/Scripts/::1705230776
+Camera.gd::GDScript::-1::1705230646::0::1::::<>Node3D<>::
 ::res://Assets/Textures/::1705246551
 ConcretePrecastPlates004_AO_2K_SPECULAR.png::CompressedTexture2D::7976198062511144502::1705245148::1705246450::1::::<><>::
 ConcretePrecastPlates004_COL_2K_SPECULAR.png::CompressedTexture2D::6897610561733336095::1705245148::1705246425::1::::<><>::
 ConcretePrecastPlates004_NRM_2K_SPECULAR.png::CompressedTexture2D::7756968611102421356::1705245148::1705246440::1::::<><>::
-::res://Label Settings/::1705248293
-ui_font.tres::LabelSettings::2964133982414697131::1705248854::0::1::::<><>::
-::res://Scripts/::1705230776
-Camera.gd::GDScript::-1::1705230646::0::1::::<>Node3D<>::
+::res://Label Settings/::1705248856
+ui_font.tres::LabelSettings::2964133982414697131::1705248856::0::1::::<><>::
