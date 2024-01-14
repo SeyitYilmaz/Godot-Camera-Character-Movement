@@ -1,3 +1,4 @@
 res://gameplay_scene.tscn
 res://Camera.gd
 res://Prefabs/character.gd
+res://Label Settings/ui_font.tres
