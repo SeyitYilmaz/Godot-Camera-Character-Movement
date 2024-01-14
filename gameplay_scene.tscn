@@ -1,27 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://dykqmf3tc3cmy"]
+[gd_scene load_steps=12 format=3 uid="uid://dykqmf3tc3cmy"]
 
 [ext_resource type="PackedScene" uid="uid://c5da3lltpjleh" path="res://Prefabs/airplane.tscn" id="1_mhm0c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_qmc2e"]
 [ext_resource type="PackedScene" uid="uid://b6y80qqi6ald1" path="res://Prefabs/character.tscn" id="3_2qjb5"]
+[ext_resource type="Texture2D" uid="uid://c5jivx00jkr2f" path="res://Assets/Textures/ConcretePrecastPlates004_COL_2K_SPECULAR.png" id="3_3a46k"]
+[ext_resource type="Texture2D" uid="uid://dlvy21fvxkdpm" path="res://Assets/Textures/ConcretePrecastPlates004_AO_2K_SPECULAR.png" id="4_i0a3b"]
 [ext_resource type="Script" path="res://Prefabs/character.gd" id="4_pnlq3"]
+[ext_resource type="Texture2D" uid="uid://dirse0rpus3lw" path="res://Assets/Textures/ConcretePrecastPlates004_NRM_2K_SPECULAR.png" id="5_pgvcj"]
+[ext_resource type="LabelSettings" uid="uid://bih34a141xvod" path="res://Label Settings/ui_font.tres" id="8_j8wnp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xswqp"]
 size = Vector3(40.0083, 1, 39.9849)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhx4y"]
-albedo_color = Color(0.596078, 1, 0, 1)
-metallic_specular = 0.0
-roughness = 0.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utqv6"]
+albedo_texture = ExtResource("3_3a46k")
+normal_enabled = true
+normal_texture = ExtResource("5_pgvcj")
+ao_enabled = true
+ao_texture = ExtResource("4_i0a3b")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nn5a"]
-material = SubResource("StandardMaterial3D_hhx4y")
+material = SubResource("StandardMaterial3D_utqv6")
 size = Vector3(60, 1, 60)
 
 [node name="GameplayScene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.91527, 0)
 
 [node name="MainCam" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_qmc2e")
 min_zoom = 0
 max_zoom = 50
@@ -29,10 +36,10 @@ zoom_speed = 100.0
 movement_speed = 20.0
 
 [node name="RotationPitchPivot" type="Node3D" parent="MainCam"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="MainCam/RotationPitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
 
 [node name="Airplane" parent="." instance=ExtResource("1_mhm0c")]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984807, 0.173648, 8.74228e-08, 0.173648, -0.984808, -1.03838, -1.27922, -9.71243)
@@ -53,3 +60,154 @@ mesh = SubResource("BoxMesh_1nn5a")
 [node name="MainCharacter" parent="." instance=ExtResource("3_2qjb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34322, -3.89109, 0)
 script = ExtResource("4_pnlq3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_bottom = 539.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -351.0
+offset_bottom = 322.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 163.0
+offset_bottom = 23.0
+text = "Camera Controls"
+label_settings = ExtResource("8_j8wnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 154.0
+offset_bottom = 67.0
+text = "Forward : W"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label3" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 163.0
+offset_bottom = 108.0
+text = "Backward : S"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label4" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 113.0
+offset_right = 106.0
+offset_bottom = 148.0
+text = "Left : A"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label5" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 153.0
+offset_right = 110.0
+offset_bottom = 188.0
+text = "Right : D"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label6" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 193.0
+offset_right = 270.0
+offset_bottom = 228.0
+text = "Zoom In : MWHEELUP"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label7" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 233.0
+offset_right = 340.0
+offset_bottom = 268.0
+text = "Zoom Out : MWHEELDOWN"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label8" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 273.0
+offset_right = 321.0
+offset_bottom = 308.0
+text = "Rotate : MWHEELBUTTON"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Panel2" type="Panel" parent="Control"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -353.0
+offset_top = 326.0
+offset_right = -1.0
+offset_bottom = 538.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 163.0
+offset_bottom = 23.0
+text = "Ball Controls"
+label_settings = ExtResource("8_j8wnp")
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 264.0
+offset_bottom = 75.0
+text = "Forward : ARROW UP"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label3" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 81.0
+offset_right = 331.0
+offset_bottom = 116.0
+text = "Backward : ARROW DOWN"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label4" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 121.0
+offset_right = 231.0
+offset_bottom = 156.0
+text = "Left : ARROW LEFT"
+label_settings = ExtResource("8_j8wnp")
+
+[node name="Label5" type="Label" parent="Control/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 161.0
+offset_right = 267.0
+offset_bottom = 196.0
+text = "Right : ARROW RIGHT"
+label_settings = ExtResource("8_j8wnp")
