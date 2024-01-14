@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dykqmf3tc3cmy"]
 
 [ext_resource type="PackedScene" uid="uid://c5da3lltpjleh" path="res://Prefabs/airplane.tscn" id="1_mhm0c"]
-[ext_resource type="Script" path="res://Camera.gd" id="1_qmc2e"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_qmc2e"]
 [ext_resource type="PackedScene" uid="uid://b6y80qqi6ald1" path="res://Prefabs/character.tscn" id="3_2qjb5"]
 [ext_resource type="Script" path="res://Prefabs/character.gd" id="4_pnlq3"]
 
@@ -20,9 +20,19 @@ size = Vector3(60, 1, 60)
 [node name="GameplayScene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.91527, 0)
 
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, -3.81469e-06, 27.2325, 8.23642)
+[node name="MainCam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_qmc2e")
+min_zoom = 0
+max_zoom = 50
+zoom_speed = 100.0
+movement_speed = 20.0
+
+[node name="RotationPitchPivot" type="Node3D" parent="MainCam"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="MainCam/RotationPitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [node name="Airplane" parent="." instance=ExtResource("1_mhm0c")]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984807, 0.173648, 8.74228e-08, 0.173648, -0.984808, -1.03838, -1.27922, -9.71243)
